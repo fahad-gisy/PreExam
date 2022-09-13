@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 public class EnemySk : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class EnemySk : MonoBehaviour
     private static readonly int Walking = Animator.StringToHash("Walking");
     private static readonly int AttackT = Animator.StringToHash("AttackT");
     private static readonly int Attack = Animator.StringToHash("Attack");
+    private static readonly int AttackIndex = Animator.StringToHash("AttackIndex");
 
 
     private float distence
@@ -76,7 +78,8 @@ public class EnemySk : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         
-        _animator.SetBool(Attack,true);
+        _animator.SetInteger(AttackIndex,Random.Range(0,3));
+        _animator.SetTrigger(AttackT);
         
         if (distence >= 2)
         {
