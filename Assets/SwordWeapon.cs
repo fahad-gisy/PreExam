@@ -21,6 +21,7 @@ public class SwordWeapon : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            GameManager.instance.hpAmount -= 1.0f * Time.deltaTime;
             GameManager.instance.hp--;
         }
     }
