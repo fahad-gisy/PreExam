@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public float hp = 100f;
     [SerializeField] public Image hpBar;
     [SerializeField] public float hpAmount = 1f;
+    [SerializeField] private AudioClip Stop;
+    [SerializeField] private AudioSource _audioSource;
 
     private void Awake()
     {
@@ -19,5 +21,10 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         hpBar.fillAmount = hpAmount;
+    }
+
+    public void EnemySayingStop()
+    {
+       _audioSource.PlayOneShot(Stop);
     }
 }

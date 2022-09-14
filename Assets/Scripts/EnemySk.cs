@@ -11,6 +11,8 @@ public class EnemySk : MonoBehaviour
     public float turnSpeed = .01f;
     Quaternion rotGoal;
     private Vector3 direction;
+
+   
     
     private Animator _animator;
     private NavMeshAgent _agent;
@@ -54,6 +56,7 @@ public class EnemySk : MonoBehaviour
         _agent.updateRotation = false;
         if (distence <= 10)
         {
+            // GameManager.instance.EnemySayingStop();
             FollowPlayer();
         }else if (distence >= 10)
         {
@@ -65,9 +68,11 @@ public class EnemySk : MonoBehaviour
     private void FollowPlayer()
     {
         
+              
             _animator.SetBool(Walking,true);
             _agent.destination = player.transform.position;
-            if (distence <= 2)
+            
+            if (distence <= 1.5)
             {
                 _animator.SetBool(Walking,false);
                 StartCoroutine(StartAttack());
