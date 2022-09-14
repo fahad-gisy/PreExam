@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CinemachineTarget
   - Door
+  - Vcam
   layers:
   - Default
   - TransparentFX

@@ -29,6 +29,18 @@ public class Animation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            _animator.SetLayerWeight(1,1f);
+        }
+        
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            _animator.SetLayerWeight(1,0f);
+        }
+        
+        
         bool Wpressed = Input.GetKey(KeyCode.W);
         bool leftPressed = Input.GetKey(KeyCode.A);
         bool rightPressed = Input.GetKey(KeyCode.D);
