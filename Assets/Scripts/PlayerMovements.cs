@@ -14,6 +14,9 @@ public class PlayerMovements : MonoBehaviour
    [SerializeField] private GameObject groundCheck;
    [SerializeField] private float jumpH;
    public Vector3 movementVector3 = Vector3.zero;
+
+   private float mouseInputRotateX;
+   
    // private float xRotation = 0f;
     // private float facing;
     void Start()
@@ -26,8 +29,8 @@ public class PlayerMovements : MonoBehaviour
     void Update()
     {
         
-        float mouseInputRotateX = Input.GetAxis("Mouse X") * mouseSpeed;
-        playerTransform.Rotate(Vector3.up * mouseInputRotateX);
+        mouseInputRotateX =  Input.GetAxis("Mouse X");
+        
         
         bool grounded = Physics.Linecast(transform.position,groundCheck.transform.position,layerMask);
         Debug.DrawLine(transform.position,groundCheck.transform.position);
@@ -44,11 +47,14 @@ public class PlayerMovements : MonoBehaviour
     {
         float inputH = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         float inputV = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+        
          movementVector3 = transform.right * inputH + transform.forward * inputV;
         characterController.Move(movementVector3);
         
         Velcoity.y += gravity * Time.deltaTime;
         characterController.Move(Velcoity * Time.deltaTime);
+        
+        playerTransform.Rotate(Vector3.up * mouseSpeed * mouseInputRotateX * Time.deltaTime);
 
      
     }
