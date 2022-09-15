@@ -9,12 +9,12 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    // public float hp = 100f;
     [SerializeField] public Image hpBar;
     [SerializeField] public float hpAmount = 1f;
+    [SerializeField] public float hpAmountPlayer = 1f;
     [SerializeField] private AudioClip swordSlachClip;
+    [SerializeField] public AudioClip stop;
     [SerializeField] private AudioSource _audioSource;
-    [SerializeField] public float enemyHp;
 
     private void Awake()
     {
@@ -23,11 +23,11 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        hpBar.fillAmount = hpAmount;
+        hpBar.fillAmount = hpAmountPlayer;
 
-        if (hpAmount <= 0)
+        if (hpAmountPlayer <= 0)
         {
-            
+            SceneManager.LoadScene("LoseScene");
         }
      
     }

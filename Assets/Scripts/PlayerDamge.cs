@@ -9,7 +9,7 @@ public class PlayerDamge : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            GameManager.instance.enemyHp--;
+            GameManager.instance.hpAmount -= 15.0f * Time.deltaTime;
         }
     }
 }

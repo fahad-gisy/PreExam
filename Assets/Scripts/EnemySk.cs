@@ -40,11 +40,7 @@ public class EnemySk : MonoBehaviour
         _animator = GetComponent<Animator>();
         
     }
-
-    void Start()
-    {
-        
-    }
+    
 
     private void Update()
     {
@@ -53,7 +49,7 @@ public class EnemySk : MonoBehaviour
         rotGoal = Quaternion.LookRotation(direction);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotGoal, turnSpeed);
 
-        if (GameManager.instance.enemyHp <= 0)
+        if (GameManager.instance.hpAmount <= 0)
         {
             Destroy(gameObject);
         }
@@ -94,7 +90,7 @@ public class EnemySk : MonoBehaviour
         _animator.SetInteger(AttackIndex,Random.Range(0,4));
         _animator.SetTrigger(AttackT);
         
-        if (distence >= 2)
+        if (distence >= 1.5)
         {
             _animator.SetBool(Attack,false);
         }
