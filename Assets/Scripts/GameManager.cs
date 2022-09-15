@@ -10,21 +10,24 @@ public class GameManager : MonoBehaviour
     public float hp = 100f;
     [SerializeField] public Image hpBar;
     [SerializeField] public float hpAmount = 1f;
-    [SerializeField] private AudioClip gunSound;
+    [SerializeField] private AudioClip swordSlachClip;
     [SerializeField] private AudioSource _audioSource;
-    private GameObject cam;
-    [SerializeField] private Camera _camera;
+    [SerializeField] public float enemyHp;
 
     private void Awake()
     {
         instance = this;
-        cam = GameObject.FindWithTag("Vcam");
     }
 
     private void Update()
     {
         hpBar.fillAmount = hpAmount;
         
+    }
+
+    public void SwordSlashSound()
+    {
+        _audioSource.PlayOneShot(swordSlachClip);
     }
 
     

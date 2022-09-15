@@ -11,6 +11,8 @@ public class EnemySk : MonoBehaviour
     public float turnSpeed = .01f;
     Quaternion rotGoal;
     private Vector3 direction;
+    
+  
 
    
     
@@ -36,6 +38,8 @@ public class EnemySk : MonoBehaviour
         _agent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
+
+        GameManager.instance.enemyHp = 6;
     }
 
     void Start()
@@ -49,6 +53,11 @@ public class EnemySk : MonoBehaviour
         direction = (player.transform.position - transform.position).normalized; // target's pos - this.pos > direction vector
         rotGoal = Quaternion.LookRotation(direction);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotGoal, turnSpeed);
+
+        if (GameManager.instance.enemyHp <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void LateUpdate()
@@ -100,4 +109,5 @@ public class EnemySk : MonoBehaviour
             rb.drag = 5;
         }
     }
+    
 }
