@@ -12,7 +12,10 @@ public class SwordAnim : MonoBehaviour
     float maxComboDelay = 1;
     [SerializeField] private GameObject Sword;
     [SerializeField] private GameObject SwordInBack;
-    
+    private static readonly int Hit1 = Animator.StringToHash("hit1");
+    private static readonly int Hit2 = Animator.StringToHash("hit2");
+    private static readonly int Hit3 = Animator.StringToHash("hit3");
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,12 +27,12 @@ public class SwordAnim : MonoBehaviour
     {
         if (anim.GetCurrentAnimatorStateInfo(1).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(1).IsName("hit1"))
         {
-            anim.SetBool("hit1", false);
+            anim.SetBool(Hit1, false);
         }
         if (anim.GetCurrentAnimatorStateInfo(1).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(1).IsName("hit2"))
         {
             
-            anim.SetBool("hit2", false);
+            anim.SetBool(Hit2, false);
         }
         
         if (anim.GetCurrentAnimatorStateInfo(1).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(1).IsName("hit3"))
@@ -37,7 +40,7 @@ public class SwordAnim : MonoBehaviour
             Sword.SetActive(false);
             SwordInBack.SetActive(true);
             
-            anim.SetBool("hit3", false);
+            anim.SetBool(Hit3, false);
             noOfClicks = 0;
         }
         
@@ -69,7 +72,7 @@ public class SwordAnim : MonoBehaviour
         {
             StartCoroutine(SwordSoundDelay());
             anim.SetLayerWeight(1,1);
-            anim.SetBool("hit1", true);
+            anim.SetBool(Hit1, true);
             
         }
 
@@ -85,16 +88,16 @@ public class SwordAnim : MonoBehaviour
         {
             StartCoroutine(SwordSoundDelay());
             anim.SetLayerWeight(1,1);
-            anim.SetBool("hit1", false);
-            anim.SetBool("hit2", true);
+            anim.SetBool(Hit1, false);
+            anim.SetBool(Hit2, true);
             
         }
         if (noOfClicks >= 3 && anim.GetCurrentAnimatorStateInfo(1).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(1).IsName("hit2"))
         {
             StartCoroutine(SwordSoundDelay());
             anim.SetLayerWeight(1,1);
-            anim.SetBool("hit2", false);
-            anim.SetBool("hit3", true);
+            anim.SetBool(Hit2, false);
+            anim.SetBool(Hit3, true);
         }
     }
 }

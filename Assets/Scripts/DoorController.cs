@@ -9,13 +9,17 @@ public class DoorController : MonoBehaviour
    private bool _key1, _greenButton, _redButton, _blueButton,_purpleButton;
    private bool _smToggle = true,_smToggle1 = true,_smToggle2 = true,_smToggle3 = true;
    [SerializeField] private SoundManager _sm;
+   private static readonly int OpenClose = Animator.StringToHash("OpenClose");
+   private static readonly int Open = Animator.StringToHash("Open");
+   private static readonly int Press = Animator.StringToHash("Press");
+
    private void OnTriggerEnter(Collider other)
    {
       if (other.CompareTag("Door"))
       {
          
          Animator anim = other.GetComponentInChildren<Animator>();
-         anim.SetBool("OpenClose",true);
+         anim.SetBool(OpenClose,true);
          _sm.PlaySmallDoor();
 
       }
@@ -31,7 +35,7 @@ public class DoorController : MonoBehaviour
          if (_key1)
          {
             Animator anim = other.GetComponentInChildren<Animator>();
-            anim.SetBool("Open",true);
+            anim.SetBool(Open,true);
          }
       }
       //_________________(Green)______________________________
@@ -39,7 +43,7 @@ public class DoorController : MonoBehaviour
       {
          _sm.PlayButtonPress();
          Animator anim = other.GetComponentInChildren<Animator>();
-         anim.SetBool("Press",true);
+         anim.SetBool(Press,true);
          _greenButton = !_greenButton;
             Debug.Log("Green Door is:"+_greenButton);
       }
@@ -54,7 +58,7 @@ public class DoorController : MonoBehaviour
                _smToggle3 = !_smToggle3;
             }
             Animator anim = other.GetComponentInChildren<Animator>();
-            anim.SetBool("OpenClose",true);
+            anim.SetBool(OpenClose,true);
          }
       }
       //__________________(Blue)_________________________________
@@ -62,7 +66,7 @@ public class DoorController : MonoBehaviour
       {
          _sm.PlayButtonPress();
          Animator anim = other.GetComponentInChildren<Animator>();
-         anim.SetBool("Press",true);
+         anim.SetBool(Press,true);
          _blueButton = !_blueButton;
          Debug.Log("Blue Door is:"+_blueButton);
       }
@@ -77,7 +81,7 @@ public class DoorController : MonoBehaviour
                _smToggle2 = !_smToggle2;
             }
             Animator anim = other.GetComponentInChildren<Animator>();
-            anim.SetBool("OpenClose",true);
+            anim.SetBool(OpenClose,true);
          }
       }
       //____________________(Red)_______________________________
@@ -85,7 +89,7 @@ public class DoorController : MonoBehaviour
       {
          _sm.PlayButtonPress();
          Animator anim = other.GetComponentInChildren<Animator>();
-         anim.SetBool("Press",true);
+         anim.SetBool(Press,true);
          _redButton = !_redButton;
          Debug.Log("The Red Door is:"+_redButton);
       }
@@ -100,7 +104,7 @@ public class DoorController : MonoBehaviour
                _smToggle1 = !_smToggle1;
             }
             Animator anim = other.GetComponentInChildren<Animator>();
-            anim.SetBool("OpenClose",true);
+            anim.SetBool(OpenClose,true);
          }
       }
       //______________________(Purple)_________________________
@@ -108,7 +112,7 @@ public class DoorController : MonoBehaviour
       {
          _sm.PlayButtonPress();
          Animator anim = other.GetComponentInChildren<Animator>();
-         anim.SetBool("Press",true);
+         anim.SetBool(Press,true);
          _purpleButton = !_purpleButton;
          Debug.Log("The Purple Door is:"+_purpleButton);
       }
@@ -124,7 +128,7 @@ public class DoorController : MonoBehaviour
             }
             
             Animator anim = other.GetComponentInChildren<Animator>();
-            anim.SetBool("Open",true);
+            anim.SetBool(Open,true);
          }
       }
    }
@@ -135,7 +139,7 @@ public class DoorController : MonoBehaviour
       {
          _sm.PlaySmallDoor();
          Animator anim = other.GetComponentInChildren<Animator>();
-         anim.SetBool("OpenClose",false);
+         anim.SetBool(OpenClose,false);
       }
    }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -8,7 +9,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public float hp = 100f;
+    // public float hp = 100f;
     [SerializeField] public Image hpBar;
     [SerializeField] public float hpAmount = 1f;
     [SerializeField] private AudioClip swordSlachClip;
@@ -23,14 +24,20 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         hpBar.fillAmount = hpAmount;
-      
 
+        if (hpAmount <= 0)
+        {
+            
+        }
+     
     }
 
     public void SwordSlashSound()
     {
         _audioSource.PlayOneShot(swordSlachClip);
     }
+    
+    
 
     
 }
