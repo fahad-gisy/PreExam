@@ -26,6 +26,7 @@ public class DoorController : MonoBehaviour
       //__________________(MainDoor)____________________
       if (other.CompareTag("Key1"))
       {
+         _sm.PlayMainKay();
          _key1 = !_key1;
          Destroy(other.gameObject);
       }
