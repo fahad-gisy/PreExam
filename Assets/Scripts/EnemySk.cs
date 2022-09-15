@@ -65,7 +65,7 @@ public class EnemySk : MonoBehaviour
         _agent.updateRotation = false;
         if (distence <= 10)
         {
-            // GameManager.instance.EnemySayingStop();
+         ;
             FollowPlayer();
         }else if (distence >= 10)
         {
@@ -92,7 +92,7 @@ public class EnemySk : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         
-        _animator.SetInteger(AttackIndex,Random.Range(0,3));
+        _animator.SetInteger(AttackIndex,Random.Range(0,4));
         _animator.SetTrigger(AttackT);
         
         if (distence >= 2)

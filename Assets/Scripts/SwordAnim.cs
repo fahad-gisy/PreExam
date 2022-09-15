@@ -10,6 +10,8 @@ public class SwordAnim : MonoBehaviour
     public static int noOfClicks = 0;
     float lastClickedTime = 0;
     float maxComboDelay = 1;
+    [SerializeField] private GameObject Sword;
+    [SerializeField] private GameObject SwordInBack;
     
     // Start is called before the first frame update
     void Start()
@@ -32,11 +34,13 @@ public class SwordAnim : MonoBehaviour
         
         if (anim.GetCurrentAnimatorStateInfo(1).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(1).IsName("hit3"))
         {
-
+            Sword.SetActive(false);
+            SwordInBack.SetActive(true);
             
             anim.SetBool("hit3", false);
             noOfClicks = 0;
         }
+        
         
         if (Time.time - lastClickedTime > maxComboDelay)
         {
@@ -49,6 +53,8 @@ public class SwordAnim : MonoBehaviour
             // Check for mouse input
             if (Input.GetMouseButtonDown(0))
             {
+                Sword.SetActive(true);
+                SwordInBack.SetActive(false);
                 OnClick();
             }
         }

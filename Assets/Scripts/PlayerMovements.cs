@@ -10,12 +10,9 @@ public class PlayerMovements : MonoBehaviour
     public float gravity = -9.81f;
     [SerializeField] private float mouseSpeed;
     public Transform playerTransform;
-   [SerializeField] private LayerMask layerMask;
-   [SerializeField] private GameObject groundCheck;
-   [SerializeField] private float jumpH;
-   public Vector3 movementVector3 = Vector3.zero;
-
-   [SerializeField] private ParticleSystem gunFire;
+    [SerializeField] private float jumpH;
+    private Vector3 movementVector3 = Vector3.zero;
+   
 
   
 
@@ -39,17 +36,7 @@ public class PlayerMovements : MonoBehaviour
         
         mouseInputRotateX =  Input.GetAxis("Mouse X");
         // mouseInputRotateY = Input.GetAxis("Mouse Y");
-        
-        
-        bool grounded = Physics.Linecast(transform.position,groundCheck.transform.position,layerMask);
-        Debug.DrawLine(transform.position,groundCheck.transform.position);
 
-        if (Input.GetKeyDown(KeyCode.Space) && grounded)
-        {
-            // Jump();
-            Velcoity.y = jumpH;
-        }
-        
     }
 
     private void FixedUpdate()
