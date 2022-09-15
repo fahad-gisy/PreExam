@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoading : MonoBehaviour
 {
-  [SerializeField] private string gameScene;
+  
   public void ReturnToMainMenu()
   {
     SceneManager.LoadScene("MainMenu");
