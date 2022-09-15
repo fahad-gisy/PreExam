@@ -9,6 +9,16 @@ TagManager:
   - Vcam
   - Enemy
   - Sword
+  - LockedDoor1
+  - Key1
+  - GreenButton
+  - GreenDoor
+  - BlueButton
+  - BlueDoor
+  - RedButton
+  - RedDoor
+  - PurpleButton
+  - PurpleDoor
   layers:
   - Default
   - TransparentFX
