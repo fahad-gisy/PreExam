@@ -6930,6 +6930,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _smallDoor: {fileID: 8300000, guid: 3f8e07514e256a84ea97d547cfc0fdfe, type: 3}
   _buttonPress: {fileID: 8300000, guid: 46dd957ebf1fcbc4098fc83bec0af459, type: 3}
+  _mainKey: {fileID: 0}
 --- !u!1 &563635504
 GameObject:
   m_ObjectHideFlags: 0
@@ -13632,7 +13633,7 @@ PrefabInstance:
     - target: {fileID: 1147479198277840682, guid: a7f89e9ba0983c44ebccd5e7e941af35,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7f89e9ba0983c44ebccd5e7e941af35, type: 3}
@@ -13665,8 +13666,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.14167683, y: 0.7414408, z: 0.07384565}
-  m_Center: {x: -0.002288515, y: 0.38572142, z: -0.0038221139}
+  m_Size: {x: 0.24735196, y: 0.8030508, z: 0.14907387}
+  m_Center: {x: -0.002598193, y: 0.4165265, z: -0.0059088157}
 --- !u!1 &1154756741
 GameObject:
   m_ObjectHideFlags: 0
@@ -18298,6 +18299,7 @@ MonoBehaviour:
   hpAmount: 1
   hpAmountPlayer: 1
   swordSlachClip: {fileID: 8300000, guid: 50db008a3811c6342b07928ef7a56d6c, type: 3}
+  stop: {fileID: 0}
   _audioSource: {fileID: 367604144}
 --- !u!114 &1617621333
 MonoBehaviour:
@@ -18311,7 +18313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce11c3a8a2bd0fa429df91b69f9c7338, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeToCountDown: 60
+  TimeToCountDown: 240
   timeText: {fileID: 1531229883}
 --- !u!1 &1626896786
 GameObject:

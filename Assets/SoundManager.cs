@@ -22,15 +22,9 @@ public class SoundManager : MonoBehaviour
     {
         _audioSource.PlayOneShot(_buttonPress);
     }
-
-<<<<<<< HEAD
-    public void StopSound()
-    {
-        _audioSource.PlayOneShot(GameManager.instance.stop);
-=======
+    
     public void PlayMainKay()
     {
         _audioSource.PlayOneShot(_mainKey);
->>>>>>> cfac5c00f1a7c28aa20cdcc35a275b650ecdbc98
     }
 }

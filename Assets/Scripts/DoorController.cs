@@ -35,7 +35,6 @@ public class DoorController : MonoBehaviour
       {
          if (_key1)
          {
-            _sm.StopSound();
             Animator anim = other.GetComponentInChildren<Animator>();
             anim.SetBool(Open,true);
          }
