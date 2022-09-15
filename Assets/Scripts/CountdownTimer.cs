@@ -18,10 +18,12 @@ public class CountdownTimer : MonoBehaviour
     
     void Update()
     {
-        timeText.text = timer.ToString("g2");
+        timeText.text = timer.ToString("0000");
         CountDown();
         if (timer <= 0)
         {
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
             SceneManager.LoadScene("LoseScene");
             timer = 0;
         }

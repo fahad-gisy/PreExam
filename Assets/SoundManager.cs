@@ -6,7 +6,7 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     private AudioSource _audioSource;
-    [SerializeField] private AudioClip _smallDoor, _buttonPress;
+    [SerializeField] private AudioClip _smallDoor, _buttonPress,_mainKey;
 
     private void Start()
     {
@@ -21,5 +21,10 @@ public class SoundManager : MonoBehaviour
     public void PlayButtonPress()
     {
         _audioSource.PlayOneShot(_buttonPress);
+    }
+
+    public void PlayMainKay()
+    {
+        _audioSource.PlayOneShot(_mainKey);
     }
 }
