@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class SwordWeapon : MonoBehaviour
 {
+    [SerializeField] private ParticleSystem blood;
     
     private void OnTriggerEnter(Collider other)
     {
