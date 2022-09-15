@@ -38,8 +38,7 @@ public class EnemySk : MonoBehaviour
         _agent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
-
-        GameManager.instance.enemyHp = 6;
+        
     }
 
     void Start()
