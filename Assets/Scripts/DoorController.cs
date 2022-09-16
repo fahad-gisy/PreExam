@@ -8,6 +8,7 @@ public class DoorController : MonoBehaviour
 {
    private bool _key1, _greenButton, _redButton, _blueButton,_purpleButton;
    private bool _smToggle = true,_smToggle1 = true,_smToggle2 = true,_smToggle3 = true;
+   [SerializeField] private GameObject keyPadCanvas;
    [SerializeField] private SoundManager _sm;
    private static readonly int OpenClose = Animator.StringToHash("OpenClose");
    private static readonly int Open = Animator.StringToHash("Open");
@@ -28,17 +29,18 @@ public class DoorController : MonoBehaviour
       {
          _sm.PlayMainKay();
          _key1 = !_key1;
+         keyPadCanvas.SetActive(true);
          Destroy(other.gameObject);
       }
 
-      if (other.CompareTag("LockedDoor1"))
-      {
-         if (_key1)
-         {
-            Animator anim = other.GetComponentInChildren<Animator>();
-            anim.SetBool(Open,true);
-         }
-      }
+      // if (other.CompareTag("LockedDoor1"))
+      // {
+      //    if (_key1)
+      //    {
+      //       Animator anim = other.GetComponentInChildren<Animator>();
+      //       anim.SetBool(Open,true);
+      //    }
+      // }
       //_________________(Green)______________________________
       if (other.CompareTag("GreenButton"))
       {
