@@ -1,9 +1,11 @@
-
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovements : MonoBehaviour
 {
-    // Start is called before the first frame update
+   
     [SerializeField] private float speed;
     public CharacterController characterController;
     private Vector3 Velcoity;
@@ -12,15 +14,8 @@ public class PlayerMovements : MonoBehaviour
     public Transform playerTransform;
     [SerializeField] private float jumpH;
     private Vector3 movementVector3 = Vector3.zero;
-   
-
-  
-
-
-  
-  
-
-   private float mouseInputRotateX;
+    private float mouseInputRotateX;
+    [SerializeField] private GameObject canvasInfo;
 
    
     void Start()
@@ -35,8 +30,15 @@ public class PlayerMovements : MonoBehaviour
         
         
         mouseInputRotateX =  Input.GetAxis("Mouse X");
+        
         // mouseInputRotateY = Input.GetAxis("Mouse Y");
+        StartCoroutine(canvasInfoHide());
+    }
 
+    IEnumerator canvasInfoHide()
+    {
+        yield return new WaitForSeconds(10f);
+        canvasInfo.SetActive(false);
     }
 
     private void FixedUpdate()

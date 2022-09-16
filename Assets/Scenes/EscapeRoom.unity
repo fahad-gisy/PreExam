@@ -8363,7 +8363,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Find your way to solve \nthe doors puzzle by\nFinding all button hiding
-    in\nthe map\nbehold the evil enemies!!"
+    in\nthe map\nbehold the evil boss"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -16420,6 +16420,7 @@ MonoBehaviour:
   mouseSpeed: 100
   playerTransform: {fileID: 5020810792605861013}
   jumpH: 0
+  canvasInfo: {fileID: 298532733}
 --- !u!1 &1415440370
 GameObject:
   m_ObjectHideFlags: 0
