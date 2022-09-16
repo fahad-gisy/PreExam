@@ -13,7 +13,7 @@ public class SceneLoading : MonoBehaviour
   
   public void StartButton()
   {
-    SceneManager.LoadScene("SampleScene");
+    SceneManager.LoadScene("EscapeRoom");
   }
 
   public void QuitGame()
