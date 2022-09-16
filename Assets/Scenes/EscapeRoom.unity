@@ -2338,22 +2338,22 @@ PrefabInstance:
     - target: {fileID: 7136575679961572711, guid: 7375de6143fe87645ab66b39323f2bd3,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: -0.05985183
+      value: -0.059851833
       objectReference: {fileID: 0}
     - target: {fileID: 7136575679961572711, guid: 7375de6143fe87645ab66b39323f2bd3,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: -0.05985183
+      value: -0.059851833
       objectReference: {fileID: 0}
     - target: {fileID: 7136575679961572711, guid: 7375de6143fe87645ab66b39323f2bd3,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: -0.05985183
+      value: -0.059851825
       objectReference: {fileID: 0}
     - target: {fileID: 7136575679961572711, guid: 7375de6143fe87645ab66b39323f2bd3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.228
+      value: 2.2279968
       objectReference: {fileID: 0}
     - target: {fileID: 7136575679961572711, guid: 7375de6143fe87645ab66b39323f2bd3,
         type: 3}
@@ -2368,12 +2368,12 @@ PrefabInstance:
     - target: {fileID: 7136575679961572711, guid: 7375de6143fe87645ab66b39323f2bd3,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.30800968
+      value: -0.30800962
       objectReference: {fileID: 0}
     - target: {fileID: 7136575679961572711, guid: 7375de6143fe87645ab66b39323f2bd3,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.08583523
+      value: -0.08583525
       objectReference: {fileID: 0}
     - target: {fileID: 7136575679961572711, guid: 7375de6143fe87645ab66b39323f2bd3,
         type: 3}
@@ -2383,7 +2383,7 @@ PrefabInstance:
     - target: {fileID: 7136575679961572711, guid: 7375de6143fe87645ab66b39323f2bd3,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.25864166
+      value: -0.25864163
       objectReference: {fileID: 0}
     - target: {fileID: 7136575679961572711, guid: 7375de6143fe87645ab66b39323f2bd3,
         type: 3}
@@ -4145,7 +4145,7 @@ PrefabInstance:
     - target: {fileID: 2931138148083698681, guid: c0e097fec22cb904eb9d10aae04a7ef3,
         type: 3}
       propertyPath: m_Volume
-      value: 0.515
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2931138148083698681, guid: c0e097fec22cb904eb9d10aae04a7ef3,
         type: 3}
@@ -10909,7 +10909,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5255f8c207ec944583a857af2082f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blood: {fileID: 0}
 --- !u!65 &902800227
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13991,7 +13990,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5255f8c207ec944583a857af2082f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blood: {fileID: 0}
 --- !u!65 &1132335731
 BoxCollider:
   m_ObjectHideFlags: 0
