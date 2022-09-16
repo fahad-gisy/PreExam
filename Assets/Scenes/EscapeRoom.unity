@@ -3151,6 +3151,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 283615995}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &290174042 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6185937851196024413, guid: ea51da4cf1acfea49802848e749a5a13,
+    type: 3}
+  m_PrefabInstance: {fileID: 1618091977}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &290174046
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290174042}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300004, guid: 41643e72c6ea3694bbd7059743f34966, type: 3}
 --- !u!1 &294414352
 GameObject:
   m_ObjectHideFlags: 0
@@ -6774,7 +6794,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &477473972
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7691,7 +7711,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resultText: {fileID: 1225276698}
   _playerMovements: {fileID: 1399363169}
-  canvasKeyPad: {fileID: 477473971}
   camSwitch: {fileID: 825904773}
 --- !u!65 &525474426
 BoxCollider:
@@ -16016,6 +16035,26 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1188011313}
   m_Mesh: {fileID: 4300000, guid: 69850715f8d465b45a1e9698cd699191, type: 3}
+--- !u!1 &1189715986 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6185937851196024403, guid: ea51da4cf1acfea49802848e749a5a13,
+    type: 3}
+  m_PrefabInstance: {fileID: 1618091977}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1189715990
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189715986}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300006, guid: 41643e72c6ea3694bbd7059743f34966, type: 3}
 --- !u!1 &1192445618
 GameObject:
   m_ObjectHideFlags: 0
@@ -20531,6 +20570,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 506680041}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1601603497 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6185937851196024411, guid: ea51da4cf1acfea49802848e749a5a13,
+    type: 3}
+  m_PrefabInstance: {fileID: 1618091977}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1601603501
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601603497}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 41643e72c6ea3694bbd7059743f34966, type: 3}
 --- !u!1 &1606057224
 GameObject:
   m_ObjectHideFlags: 0
@@ -33677,7 +33736,7 @@ GameObject:
   - component: {fileID: 929142014659919515}
   m_Layer: 0
   m_Name: Key1
-  m_TagString: Key1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39155,6 +39214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4294b0676ac2524195754ad0aebaf0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyPadCanvas: {fileID: 477473971}
   _sm: {fileID: 561793827}
 --- !u!4 &8447082968088295292
 Transform:
