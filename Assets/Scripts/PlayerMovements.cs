@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovements : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class PlayerMovements : MonoBehaviour
     [SerializeField] private float mouseSpeed;
     public Transform playerTransform;
     [SerializeField] private float jumpH;
-    private Vector3 movementVector3 = Vector3.zero;
+    public Vector3 movementVector3 = Vector3.zero;
     private float mouseInputRotateX;
     [SerializeField] private GameObject canvasInfo;
 
@@ -21,7 +22,7 @@ public class PlayerMovements : MonoBehaviour
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-        Cursor.lockState = CursorLockMode.Locked;
+       
     }
 
     // Update is called once per frame
