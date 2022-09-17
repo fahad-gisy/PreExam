@@ -7,7 +7,7 @@ public class SoundManager : MonoBehaviour
 {
     private AudioSource _audioSource;
     [SerializeField] private AudioClip _smallDoor, _buttonPress,_mainKey;
-    [SerializeField] private AudioClip stop;
+    [SerializeField] private AudioClip stop,keyPadSound;
 
     private void Start()
     {
@@ -32,5 +32,9 @@ public class SoundManager : MonoBehaviour
     public void PlayEnemySayingStop()
     {
         _audioSource.PlayOneShot(stop);
+    }
+    public void PlayKeyPadSound()
+    {
+        _audioSource.PlayOneShot(keyPadSound);
     }
 }

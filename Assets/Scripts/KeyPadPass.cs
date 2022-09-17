@@ -10,6 +10,7 @@ public class KeyPadPass : MonoBehaviour
  private Animator _animator;
  [SerializeField] private PlayerMovements _playerMovements;
  [SerializeField] private SwordAnim _swordAnim;
+ [SerializeField] private SoundManager _soundManager;
  
  private float distence
  {
@@ -28,7 +29,7 @@ public class KeyPadPass : MonoBehaviour
 
  public void Number(int num)
  {
-
+ _soundManager.PlayKeyPadSound();
   camSwitch.SetActive(true);
   _playerMovements.enabled = false;
   _swordAnim.enabled = false;
