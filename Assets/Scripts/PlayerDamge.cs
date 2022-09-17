@@ -10,7 +10,7 @@ public class PlayerDamge : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            GameManager.instance.hpAmount -= 15.0f * Time.deltaTime;
+            GameManager.instance.hpAmount -= 5.0f * Time.deltaTime;
             // blood.Play();
             // StartCoroutine(stopPlayingBlood());
         }

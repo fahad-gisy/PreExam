@@ -11,8 +11,8 @@ public class EnemySk : MonoBehaviour
     public float turnSpeed = .01f;
     Quaternion rotGoal;
     private Vector3 direction;
-    
-  
+
+    private bool playStop = true;
 
    
     
@@ -20,6 +20,7 @@ public class EnemySk : MonoBehaviour
     private NavMeshAgent _agent;
     private Rigidbody rb;
     [SerializeField] private GameObject player;
+    [SerializeField] private SoundManager _soundManager;
     
     private static readonly int Walking = Animator.StringToHash("Walking");
     private static readonly int AttackT = Animator.StringToHash("AttackT");
@@ -60,8 +61,9 @@ public class EnemySk : MonoBehaviour
         _agent.updateRotation = false;
         if (distence <= 10)
         {
-         ;
+         
             FollowPlayer();
+
         }else if (distence >= 10)
         {
             _agent.SetDestination(transform.position);
@@ -71,9 +73,13 @@ public class EnemySk : MonoBehaviour
 
     private void FollowPlayer()
     {
-        
-              
-            _animator.SetBool(Walking,true);
+
+        if (playStop)
+        {
+            _soundManager.PlayEnemySayingStop();
+            playStop = false;
+        }
+        _animator.SetBool(Walking,true);
             _agent.destination = player.transform.position;
             
             if (distence <= 1.5)

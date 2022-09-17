@@ -28,11 +28,15 @@ public class SwordAnim : MonoBehaviour
         if (anim.GetCurrentAnimatorStateInfo(1).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(1).IsName("hit1"))
         {
             anim.SetBool(Hit1, false);
+            Sword.SetActive(false);
+            SwordInBack.SetActive(true);
         }
         if (anim.GetCurrentAnimatorStateInfo(1).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(1).IsName("hit2"))
         {
             
             anim.SetBool(Hit2, false);
+            Sword.SetActive(false);
+            SwordInBack.SetActive(true);
         }
         
         if (anim.GetCurrentAnimatorStateInfo(1).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(1).IsName("hit3"))
