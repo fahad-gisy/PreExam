@@ -7713,10 +7713,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resultText: {fileID: 1225276698}
   _playerMovements: {fileID: 1399363169}
-<<<<<<< HEAD
-=======
   _swordAnim: {fileID: 8356104788864054919}
->>>>>>> 179122777f286f5dc145c9ac955ef0553191fcb1
   canvasKeyPad: {fileID: 477473971}
   camSwitch: {fileID: 825904773}
 --- !u!1001 &557233707
