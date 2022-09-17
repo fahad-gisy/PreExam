@@ -14,12 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EscapeRoom.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
-    path: Assets/Scenes/WinEscape.unity
-    guid: b511f1f0ea7cfbe48a01c10fa8fe37c3
-  - enabled: 0
-    path: Assets/Scenes/LoseSce.unity
-    guid: dd1a5323c4d76a549a0fbbac39101402
   - enabled: 1
     path: Assets/Scenes/LoseScene.unity
     guid: 36bfc440ffa256a419a9b9dcb97ffdd5

@@ -9,6 +9,7 @@ public class KeyPadPass : MonoBehaviour
  [SerializeField] private TextMeshProUGUI resultText;
  private Animator _animator;
  [SerializeField] private PlayerMovements _playerMovements;
+ [SerializeField] private SwordAnim _swordAnim;
  
  private float distence
  {
@@ -27,12 +28,19 @@ public class KeyPadPass : MonoBehaviour
 
  public void Number(int num)
  {
+
   camSwitch.SetActive(true);
+  _playerMovements.enabled = false;
+  _swordAnim.enabled = false;
   resultText.text += num.ToString();
  }
 
  public void Execute()
  {
+  
+  _playerMovements.enabled = true;
+  _swordAnim.enabled = true;
+  
   if (resultText.text == answer)
   {
    camSwitch.SetActive(false);

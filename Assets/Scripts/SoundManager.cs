@@ -7,6 +7,7 @@ public class SoundManager : MonoBehaviour
 {
     private AudioSource _audioSource;
     [SerializeField] private AudioClip _smallDoor, _buttonPress,_mainKey;
+    [SerializeField] private AudioClip stop;
 
     private void Start()
     {
@@ -26,5 +27,10 @@ public class SoundManager : MonoBehaviour
     public void PlayMainKay()
     {
         _audioSource.PlayOneShot(_mainKey);
+    }
+    
+    public void PlayEnemySayingStop()
+    {
+        _audioSource.PlayOneShot(stop);
     }
 }

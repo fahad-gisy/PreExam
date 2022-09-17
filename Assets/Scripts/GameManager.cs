@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] public float hpAmount = 1f;
     [SerializeField] public float hpAmountPlayer = 1f;
     [SerializeField] private AudioClip swordSlachClip;
-    [SerializeField] public AudioClip stop;
     [SerializeField] private AudioSource _audioSource;
 
     private void Awake()
