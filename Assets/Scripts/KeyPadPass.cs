@@ -42,6 +42,8 @@ public class KeyPadPass : MonoBehaviour
   _playerMovements.enabled = true;
   _swordAnim.enabled = true;
   
+  _soundManager.PlayKeyPadExecuteButton();
+  
   if (resultText.text == answer)
   {
    camSwitch.SetActive(false);

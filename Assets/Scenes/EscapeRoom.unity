@@ -7616,6 +7616,7 @@ MonoBehaviour:
   resultText: {fileID: 1225276698}
   _playerMovements: {fileID: 1399363169}
   _swordAnim: {fileID: 8356104788864054919}
+  _soundManager: {fileID: 561793827}
   canvasKeyPad: {fileID: 477473971}
   camSwitch: {fileID: 825904773}
 --- !u!1001 &557233707
@@ -8120,6 +8121,8 @@ MonoBehaviour:
   _buttonPress: {fileID: 8300000, guid: 46dd957ebf1fcbc4098fc83bec0af459, type: 3}
   _mainKey: {fileID: 8300000, guid: 232ba4784d6737d4393974ffe0bea131, type: 3}
   stop: {fileID: 8300000, guid: 1c871a95940cc36469457b213bf61fcc, type: 3}
+  keyPadSound: {fileID: 8300000, guid: 7f9c87925441e43bdbb6399f1c1793a6, type: 3}
+  executeButton: {fileID: 8300000, guid: c870a727b812d9444a053a52ccab3471, type: 3}
 --- !u!1 &563635504
 GameObject:
   m_ObjectHideFlags: 0
