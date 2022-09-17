@@ -7711,6 +7711,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resultText: {fileID: 1225276698}
   _playerMovements: {fileID: 1399363169}
+  canvasKeyPad: {fileID: 477473971}
   camSwitch: {fileID: 825904773}
 --- !u!65 &525474426
 BoxCollider:
@@ -38058,62 +38059,62 @@ PrefabInstance:
     - target: {fileID: 3246409076659218005, guid: ebd499665378a224083eff0d1c011df2,
         type: 3}
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Value.x
-      value: -99.446144
+      value: -100.196144
       objectReference: {fileID: 0}
     - target: {fileID: 3246409076659218005, guid: ebd499665378a224083eff0d1c011df2,
         type: 3}
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Value.y
-      value: 5.063877
+      value: 5.9538803
       objectReference: {fileID: 0}
     - target: {fileID: 3246409076659218005, guid: ebd499665378a224083eff0d1c011df2,
         type: 3}
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[0].m_Value.z
-      value: -160.96011
+      value: -183.60013
       objectReference: {fileID: 0}
     - target: {fileID: 3246409076659218005, guid: ebd499665378a224083eff0d1c011df2,
         type: 3}
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[1].m_Value.x
-      value: -99.54857
+      value: -100.29857
       objectReference: {fileID: 0}
     - target: {fileID: 3246409076659218005, guid: ebd499665378a224083eff0d1c011df2,
         type: 3}
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[1].m_Value.y
-      value: 5.045418
+      value: 5.935421
       objectReference: {fileID: 0}
     - target: {fileID: 3246409076659218005, guid: ebd499665378a224083eff0d1c011df2,
         type: 3}
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[1].m_Value.z
-      value: -160.77716
+      value: -183.41718
       objectReference: {fileID: 0}
     - target: {fileID: 3246409076659218005, guid: ebd499665378a224083eff0d1c011df2,
         type: 3}
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[2].m_Value.x
-      value: -99.461205
+      value: -100.211205
       objectReference: {fileID: 0}
     - target: {fileID: 3246409076659218005, guid: ebd499665378a224083eff0d1c011df2,
         type: 3}
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[2].m_Value.y
-      value: 4.960388
+      value: 5.8503876
       objectReference: {fileID: 0}
     - target: {fileID: 3246409076659218005, guid: ebd499665378a224083eff0d1c011df2,
         type: 3}
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[2].m_Value.z
-      value: -160.43478
+      value: -183.07478
       objectReference: {fileID: 0}
     - target: {fileID: 3246409076659218005, guid: ebd499665378a224083eff0d1c011df2,
         type: 3}
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[3].m_Value.x
-      value: -99.62174
+      value: -100.37174
       objectReference: {fileID: 0}
     - target: {fileID: 3246409076659218005, guid: ebd499665378a224083eff0d1c011df2,
         type: 3}
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[3].m_Value.y
-      value: 5.115288
+      value: 6.005295
       objectReference: {fileID: 0}
     - target: {fileID: 3246409076659218005, guid: ebd499665378a224083eff0d1c011df2,
         type: 3}
       propertyPath: m_PropertySheet.m_Vector3f.m_Array.Array.data[3].m_Value.z
-      value: -160.2969
+      value: -182.93689
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebd499665378a224083eff0d1c011df2, type: 3}
