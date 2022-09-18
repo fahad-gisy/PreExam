@@ -17,7 +17,7 @@ public class ThirdPersonShooterController : MonoBehaviour
     [SerializeField] private SoundManager _sm;
     [SerializeField] private MultiAimConstraint _aimConstrained;
     //[SerializeField] private GameObject VfxHitWall;
-    //[SerializeField] private GameObject VfxHitBlood;
+    //[SerializeField] private GameObject VfxHitFlash;
     private Animator _animator;
     private StarterAssetsInputs _starterAssetsInputs;
     private ThirdPersonController _thirdPersonController;
@@ -32,6 +32,7 @@ public class ThirdPersonShooterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(lastShot);
         Vector3 mouseWorldPosition = Vector3.zero;
         Vector2 screenCenterPoint = new Vector2(Screen.width / 2f, Screen.height / 2f);
         Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
@@ -77,12 +78,10 @@ public class ThirdPersonShooterController : MonoBehaviour
                     Debug.Log("hit" + hitTransform);
                     if (hitTransform.GetComponent<BulletTarget>() != null)
                     {
-                        //Instantiate(VfxHitBlood, transform.position, Quaternion.identity);
                         Debug.Log("hit Enemy" + hitTransform);
                     }
                     else
                     {
-                        //Instantiate(VfxHitWall, transform.position, Quaternion.identity);
                         Debug.Log("hit Something else" + hitTransform);
                     }
                 }
