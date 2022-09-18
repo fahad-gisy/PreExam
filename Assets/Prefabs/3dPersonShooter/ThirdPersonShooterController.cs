@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,6 +22,8 @@ public class ThirdPersonShooterController : MonoBehaviour
     private Animator _animator;
     private StarterAssetsInputs _starterAssetsInputs;
     private ThirdPersonController _thirdPersonController;
+    [SerializeField] private GameObject muzzleEffect;
+    [SerializeField] private GameObject muzzleSpwan;
     
     void Start()
     {
@@ -53,7 +56,7 @@ public class ThirdPersonShooterController : MonoBehaviour
             Vector3 worldAimTarget = mouseWorldPosition;
             worldAimTarget.y = transform.position.y;
             Vector3 aimDirection = (worldAimTarget - transform.position).normalized;
-
+            
             transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
         }
         else
@@ -71,6 +74,7 @@ public class ThirdPersonShooterController : MonoBehaviour
             if (_starterAssetsInputs.shoot && _starterAssetsInputs.aim)
             {
                 _sm.PlayGunShoot();
+                Instantiate(muzzleEffect, muzzleSpwan.transform.position, transform.rotation);
                 //_animator.SetBool("Shoot",true);
                 _animator.SetTrigger("PistolShoot");
                 if (hitTransform != null)
@@ -78,7 +82,9 @@ public class ThirdPersonShooterController : MonoBehaviour
                     Debug.Log("hit" + hitTransform);
                     if (hitTransform.GetComponent<BulletTarget>() != null)
                     {
-                        Debug.Log("hit Enemy" + hitTransform);
+                       // Destroy(hitTransform.gameObject);
+                       GameManager.instance.hpAmount -= 30.0f * Time.deltaTime;
+                       Debug.Log(hitTransform);
                     }
                     else
                     {
@@ -94,4 +100,6 @@ public class ThirdPersonShooterController : MonoBehaviour
             }
         }
     }
+
+    
 }

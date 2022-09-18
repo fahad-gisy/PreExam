@@ -9,11 +9,12 @@ public class KeyPadPass : MonoBehaviour
  [SerializeField] private TextMeshProUGUI resultText;
  private Animator _animator;
  [SerializeField] private SoundManager _soundManager;
+ [SerializeField] private ThirdPersonShooterController _thirdPersonShooterController;
  
- // private float distence
- // {
- //  get { return Vector3.Distance(transform.position, _playerMovements.transform.position); }
- // }
+ private float distence
+ {
+  get { return Vector3.Distance(transform.position, _thirdPersonShooterController.transform.position); }
+ }
 
  private void Awake()
  {
@@ -56,9 +57,9 @@ public class KeyPadPass : MonoBehaviour
 
  private void Update()
  {
-  // if (camSwitch.activeSelf&& distence > 10)
-  // {
-  //  camSwitch.SetActive(false);
-  // }
+  if (camSwitch.activeSelf&& distence > 10)
+  {
+   camSwitch.SetActive(false);
+  }
  }
 }
