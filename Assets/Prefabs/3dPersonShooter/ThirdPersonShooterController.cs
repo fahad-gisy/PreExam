@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using StarterAssets;
+using UnityEngine.Animations;
+using UnityEngine.Animations.Rigging;
 using UnityEngine.InputSystem;
 
 public class ThirdPersonShooterController : MonoBehaviour
@@ -10,7 +12,8 @@ public class ThirdPersonShooterController : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera _aimVirtualCamera;
     [SerializeField] private LayerMask aimColliderLayerMask = new LayerMask();
     [SerializeField] private Transform debugTransform;
-    
+
+    [SerializeField] private MultiAimConstraint _aimConstrained;
     //[SerializeField] private GameObject VfxHitWall;
     //[SerializeField] private GameObject VfxHitBlood;
     private Animator _animator;
@@ -42,6 +45,7 @@ public class ThirdPersonShooterController : MonoBehaviour
             _animator.SetLayerWeight(1,Mathf.Lerp(_animator.GetLayerWeight(1),1f,Time.deltaTime*20f));
             _thirdPersonController.SetRotateOnMove(false);
             _aimVirtualCamera.gameObject.SetActive(true);
+            _aimConstrained.weight = 1f;
             Vector3 worldAimTarget = mouseWorldPosition;
             worldAimTarget.y = transform.position.y;
             Vector3 aimDirection = (worldAimTarget - transform.position).normalized;
@@ -53,6 +57,7 @@ public class ThirdPersonShooterController : MonoBehaviour
             _animator.SetLayerWeight(1,Mathf.Lerp(_animator.GetLayerWeight(1),0f,Time.deltaTime*20f));
             _aimVirtualCamera.gameObject.SetActive(false);
             _thirdPersonController.SetRotateOnMove(true);
+            _aimConstrained.weight = 0f;
         }
 
         if (_starterAssetsInputs.shoot&&_starterAssetsInputs.aim)
