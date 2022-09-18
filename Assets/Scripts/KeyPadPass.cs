@@ -8,14 +8,12 @@ public class KeyPadPass : MonoBehaviour
 {
  [SerializeField] private TextMeshProUGUI resultText;
  private Animator _animator;
- [SerializeField] private PlayerMovements _playerMovements;
- [SerializeField] private SwordAnim _swordAnim;
  [SerializeField] private SoundManager _soundManager;
  
- private float distence
- {
-  get { return Vector3.Distance(transform.position, _playerMovements.transform.position); }
- }
+ // private float distence
+ // {
+ //  get { return Vector3.Distance(transform.position, _playerMovements.transform.position); }
+ // }
 
  private void Awake()
  {
@@ -31,16 +29,13 @@ public class KeyPadPass : MonoBehaviour
  {
  _soundManager.PlayKeyPadSound();
   camSwitch.SetActive(true);
-  _playerMovements.enabled = false;
-  _swordAnim.enabled = false;
   resultText.text += num.ToString();
  }
 
  public void Execute()
  {
   
-  _playerMovements.enabled = true;
-  _swordAnim.enabled = true;
+
   
   _soundManager.PlayKeyPadExecuteButton();
   
@@ -61,9 +56,9 @@ public class KeyPadPass : MonoBehaviour
 
  private void Update()
  {
-  if (camSwitch.activeSelf&& distence > 10)
-  {
-   camSwitch.SetActive(false);
-  }
+  // if (camSwitch.activeSelf&& distence > 10)
+  // {
+  //  camSwitch.SetActive(false);
+  // }
  }
 }
