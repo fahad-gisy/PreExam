@@ -14,5 +14,6 @@ public class TriggerCursor : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }
