@@ -9,16 +9,19 @@ using UnityEngine.InputSystem;
 
 public class ThirdPersonShooterController : MonoBehaviour
 {
+    [SerializeField] float _pistolCd=1f;
+    float lastShot =0f;
     [SerializeField] private CinemachineVirtualCamera _aimVirtualCamera;
     [SerializeField] private LayerMask aimColliderLayerMask = new LayerMask();
     [SerializeField] private Transform debugTransform;
-
+    [SerializeField] private SoundManager _sm;
     [SerializeField] private MultiAimConstraint _aimConstrained;
     //[SerializeField] private GameObject VfxHitWall;
     //[SerializeField] private GameObject VfxHitBlood;
     private Animator _animator;
     private StarterAssetsInputs _starterAssetsInputs;
     private ThirdPersonController _thirdPersonController;
+    
     void Start()
     {
         _starterAssetsInputs = GetComponent<StarterAssetsInputs>();
@@ -59,29 +62,37 @@ public class ThirdPersonShooterController : MonoBehaviour
             _thirdPersonController.SetRotateOnMove(true);
             _aimConstrained.weight = 0f;
         }
-
-        if (_starterAssetsInputs.shoot&&_starterAssetsInputs.aim)
+        
+        if (Time.time>lastShot)
         {
-            if (hitTransform != null)
+
+
+            if (_starterAssetsInputs.shoot && _starterAssetsInputs.aim)
             {
-                Debug.Log("hit"+hitTransform);
-                if (hitTransform.GetComponent<BulletTarget>()!= null)
+                _sm.PlayGunShoot();
+                //_animator.SetBool("Shoot",true);
+                _animator.SetTrigger("PistolShoot");
+                if (hitTransform != null)
                 {
-                    //Instantiate(VfxHitBlood, transform.position, Quaternion.identity);
-                    Debug.Log("hit Enemy"+hitTransform);
+                    Debug.Log("hit" + hitTransform);
+                    if (hitTransform.GetComponent<BulletTarget>() != null)
+                    {
+                        //Instantiate(VfxHitBlood, transform.position, Quaternion.identity);
+                        Debug.Log("hit Enemy" + hitTransform);
+                    }
+                    else
+                    {
+                        //Instantiate(VfxHitWall, transform.position, Quaternion.identity);
+                        Debug.Log("hit Something else" + hitTransform);
+                    }
                 }
-                else
-                {
-                    //Instantiate(VfxHitWall, transform.position, Quaternion.identity);
-                    Debug.Log("hit Something else"+hitTransform);
-                }
+
+
+                _starterAssetsInputs.shoot = false;
+                //_animator.SetBool("Shoot",false);
+
+                lastShot = Time.time + _pistolCd;
             }
-
-            _starterAssetsInputs.shoot = false;
-
-
         }
-        
-        
     }
 }

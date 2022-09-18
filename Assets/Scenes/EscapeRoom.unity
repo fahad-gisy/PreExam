@@ -17925,6 +17925,7 @@ MonoBehaviour:
   stop: {fileID: 8300000, guid: 1c871a95940cc36469457b213bf61fcc, type: 3}
   keyPadSound: {fileID: 8300000, guid: 7f9c87925441e43bdbb6399f1c1793a6, type: 3}
   executeButton: {fileID: 8300000, guid: c870a727b812d9444a053a52ccab3471, type: 3}
+  _gunShoot: {fileID: 8300000, guid: 4f3662b078df3254bb0ab0fe7a1677de, type: 3}
 --- !u!1 &563635504
 GameObject:
   m_ObjectHideFlags: 0
@@ -33228,6 +33229,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6518257226903965075, guid: 914bf7825eb6ee64db2417311c53bc94,
+        type: 3}
+      propertyPath: _sm
+      value: 
+      objectReference: {fileID: 561793827}
+    - target: {fileID: 6518257226903965075, guid: 914bf7825eb6ee64db2417311c53bc94,
+        type: 3}
+      propertyPath: _pistolCd
+      value: 11.62
       objectReference: {fileID: 0}
     - target: {fileID: 6518257226903965075, guid: 914bf7825eb6ee64db2417311c53bc94,
         type: 3}
