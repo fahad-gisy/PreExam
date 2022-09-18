@@ -38,7 +38,7 @@ public class PlayerMovements : MonoBehaviour
 
     IEnumerator canvasInfoHide()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(20f);
         canvasInfo.SetActive(false);
     }
 
