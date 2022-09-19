@@ -83,7 +83,7 @@ public class ThirdPersonShooterController : MonoBehaviour
                     if (hitTransform.GetComponent<BulletTarget>() != null)
                     {
                        // Destroy(hitTransform.gameObject);
-                       GameManager.instance.hpAmount -= 30.0f * Time.deltaTime;
+                       GameManager.instance.hpAmount -= 50.0f * Time.deltaTime;
                        Debug.Log(hitTransform);
                     }
                     else
