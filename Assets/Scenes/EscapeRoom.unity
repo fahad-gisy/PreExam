@@ -1323,14 +1323,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 117725720}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.00004, y: -0.00201, z: 0.00059}
+  m_LocalRotation: {x: 0.004602251, y: -0.007721752, z: -0.49894285, w: 0.8665883}
+  m_LocalPosition: {x: 0.00068, y: -0.00265, z: 0.00091}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7702198742053245156}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.016, y: -1.03, z: -59.863}
 --- !u!1 &122381746
 GameObject:
   m_ObjectHideFlags: 0
@@ -19050,7 +19050,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Follow the arrows\nFind the buttons\nlook for the door's light \nthat
-    matching the button color\nHINT:DO NOT FORGET"
+    match with the button's color\nHINT:DO NOT FORGET"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -19077,8 +19077,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -57387,7 +57387,10 @@ MonoBehaviour:
   debugTransform: {fileID: 2618371737582283579}
   _sm: {fileID: 561793827}
   _aimConstrained: {fileID: 4220557637684247397}
-  muzzleEffect: {fileID: 100002, guid: 420494e2d2a61b84a9b3d4027e0d3ad5, type: 3}
+  bulletImpact: {fileID: 352581615881913899, guid: 83577b24fef4a914b89184fd623e46bd,
+    type: 3}
+  bulletImpactDuration: 0.5
+  muzzleEffect: {fileID: 100008, guid: b11531b8eca86ad43a1931bd652b0c61, type: 3}
   muzzleSpwan: {fileID: 117725720}
 --- !u!114 &6518257228188123542
 MonoBehaviour:

@@ -17,6 +17,8 @@ public class ThirdPersonShooterController : MonoBehaviour
     [SerializeField] private Transform debugTransform;
     [SerializeField] private SoundManager _sm;
     [SerializeField] private MultiAimConstraint _aimConstrained;
+    [SerializeField] private GameObject bulletImpact;
+    [SerializeField] private float bulletImpactDuration;
     //[SerializeField] private GameObject VfxHitWall;
     //[SerializeField] private GameObject VfxHitFlash;
     private Animator _animator;
@@ -74,7 +76,13 @@ public class ThirdPersonShooterController : MonoBehaviour
             if (_starterAssetsInputs.shoot && _starterAssetsInputs.aim)
             {
                 _sm.PlayGunShoot();
-                Instantiate(muzzleEffect, muzzleSpwan.transform.position, transform.rotation);
+                
+                Instantiate(muzzleEffect, muzzleSpwan.transform.position, muzzleSpwan.transform.rotation);
+                
+                GameObject impact = Instantiate(bulletImpact, raycastHit.point + (raycastHit.normal * 0.002f),
+                    Quaternion.LookRotation(raycastHit.normal, Vector3.up));
+                Destroy(impact,bulletImpactDuration);
+                
                 //_animator.SetBool("Shoot",true);
                 _animator.SetTrigger("PistolShoot");
                 if (hitTransform != null)
