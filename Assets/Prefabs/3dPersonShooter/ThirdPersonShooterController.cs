@@ -22,10 +22,15 @@ public class ThirdPersonShooterController : MonoBehaviour
     //[SerializeField] private GameObject VfxHitWall;
     //[SerializeField] private GameObject VfxHitFlash;
     private Animator _animator;
+    public bool canAim = false;
+    [SerializeField] public GameObject gun;
     private StarterAssetsInputs _starterAssetsInputs;
     private ThirdPersonController _thirdPersonController;
     [SerializeField] private GameObject muzzleEffect;
     [SerializeField] private GameObject muzzleSpwan;
+    [SerializeField] private GameObject mapPuzzleP1;
+    [SerializeField] private GameObject mapPuzzleP2;
+    [SerializeField] private GameObject mapPuzzleP3;
     
     void Start()
     {
@@ -37,7 +42,7 @@ public class ThirdPersonShooterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(lastShot);
+        
         Vector3 mouseWorldPosition = Vector3.zero;
         Vector2 screenCenterPoint = new Vector2(Screen.width / 2f, Screen.height / 2f);
         Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
@@ -49,7 +54,7 @@ public class ThirdPersonShooterController : MonoBehaviour
             hitTransform = raycastHit.transform;
         }
 
-        if(_starterAssetsInputs.aim)
+        if(_starterAssetsInputs.aim && canAim)
         {
             _animator.SetLayerWeight(1,Mathf.Lerp(_animator.GetLayerWeight(1),1f,Time.deltaTime*20f));
             _thirdPersonController.SetRotateOnMove(false);
@@ -75,6 +80,7 @@ public class ThirdPersonShooterController : MonoBehaviour
 
             if (_starterAssetsInputs.shoot && _starterAssetsInputs.aim)
             {
+               
                 _sm.PlayGunShoot();
                 
                 Instantiate(muzzleEffect, muzzleSpwan.transform.position, muzzleSpwan.transform.rotation);
@@ -87,6 +93,31 @@ public class ThirdPersonShooterController : MonoBehaviour
                 _animator.SetTrigger("PistolShoot");
                 if (hitTransform != null)
                 {
+                    if (hitTransform.CompareTag("MoveUp"))
+                    {
+                        mapPuzzleP1.transform.position = new Vector3(mapPuzzleP1.transform.position.x,mapPuzzleP1.transform.position.y + 3,mapPuzzleP1.transform.position.z);
+                    }
+                    
+                    if (hitTransform.CompareTag("MoveDown"))
+                    {
+                        mapPuzzleP1.transform.position = new Vector3(mapPuzzleP1.transform.position.x,mapPuzzleP1.transform.position.y - 3,mapPuzzleP1.transform.position.z);
+                    }
+                    
+                    if (hitTransform.CompareTag("MoveRotY"))
+                    {
+                        mapPuzzleP2.transform.Rotate(0,35,0);
+                    }
+                    
+                    if (hitTransform.CompareTag("MoveRight"))
+                    {
+                        mapPuzzleP3.transform.position = new Vector3(mapPuzzleP3.transform.position.x - 3 ,mapPuzzleP3.transform.position.y,mapPuzzleP3.transform.position.z);
+                    }
+                    
+                    if (hitTransform.CompareTag("MoveLeft"))
+                    {
+                        mapPuzzleP3.transform.position = new Vector3(mapPuzzleP3.transform.position.x + 3 ,mapPuzzleP3.transform.position.y,mapPuzzleP3.transform.position.z);
+                    }
+                    
                     Debug.Log("hit" + hitTransform);
                     if (hitTransform.GetComponent<BulletTarget>() != null)
                     {

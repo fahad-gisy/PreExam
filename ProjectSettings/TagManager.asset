@@ -19,6 +19,11 @@ TagManager:
   - RedDoor
   - PurpleButton
   - PurpleDoor
+  - MoveUp
+  - MoveDown
+  - MoveRotY
+  - MoveLeft
+  - MoveRight
   layers:
   - Default
   - TransparentFX
