@@ -8,7 +8,7 @@ public class SoundManager : MonoBehaviour
     private AudioSource _audioSource;
     [SerializeField] private AudioClip _smallDoor, _buttonPress,_mainKey;
     [SerializeField] private AudioClip stop,keyPadSound,executeButton;
-    [SerializeField] private AudioClip _gunShoot;
+    [SerializeField] private AudioClip _gunShoot,gunPickUp;
 
     private void Start()
     {
@@ -47,5 +47,10 @@ public class SoundManager : MonoBehaviour
     public void PlayGunShoot()
     {
         _audioSource.PlayOneShot(_gunShoot);
+    }
+
+    public void PlayPicUpGun()
+    {
+        _audioSource.PlayOneShot(gunPickUp);
     }
 }
