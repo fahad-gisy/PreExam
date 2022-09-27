@@ -78,7 +78,7 @@ public class ThirdPersonShooterController : MonoBehaviour
         {
 
 
-            if (_starterAssetsInputs.shoot && _starterAssetsInputs.aim)
+            if (_starterAssetsInputs.shoot && _starterAssetsInputs.aim&& canAim)
             {
                
                 _sm.PlayGunShoot();

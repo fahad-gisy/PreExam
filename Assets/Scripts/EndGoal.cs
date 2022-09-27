@@ -9,9 +9,13 @@ public class EndGoal : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
        //end goal trigger with player
-       Cursor.visible = true;
-       Cursor.lockState = CursorLockMode.Confined;
-       SceneManager.LoadScene("WinMenu");
+       if (other.CompareTag("Player"))
+       {
+           Cursor.visible = true;
+                  Cursor.lockState = CursorLockMode.Confined;
+                  SceneManager.LoadScene("WinMenu");
+       }
+       
       
            
     }
